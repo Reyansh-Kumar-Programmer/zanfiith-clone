@@ -1,0 +1,227 @@
+.contactWrapper {
+  min-height: calc(100vh - 300px); /* Let it be as small as it needs to be */
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: calc(-1 * var(--section-gap));
+}
+
+.splitLayout {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+@media (min-width: 900px) {
+  .splitLayout {
+    flex-direction: row;
+  }
+}
+
+.leftPanel {
+  flex: 1;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 900px) {
+  .leftPanel {
+    padding: 60px 40px;
+  }
+}
+
+.panelContent {
+  position: relative;
+  z-index: 2;
+  max-width: 500px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.massiveTitle {
+  font-size: clamp(3rem, 6vw, 6rem);
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  font-family: var(--font-chivo), sans-serif;
+  letter-spacing: -0.04em;
+  min-height: clamp(3rem, 6vw, 6rem); /* prevents jumping */
+}
+
+.panelText {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  opacity: 0.8;
+  font-weight: 300;
+}
+
+@keyframes blobFloat {
+  0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+  33% { transform: translate(30px, -50px) scale(1.1) rotate(10deg); }
+  66% { transform: translate(-20px, 20px) scale(0.9) rotate(-10deg); }
+  100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+}
+
+@keyframes blobFloatAlt {
+  0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+  50% { transform: translate(-40px, -30px) scale(1.2) rotate(-15deg); }
+  100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+}
+
+.decorativeCircle {
+  position: absolute;
+  bottom: -150px;
+  right: -150px;
+  width: 500px;
+  height: 500px;
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  background: radial-gradient(circle, rgba(230, 40, 40, 0.4) 0%, rgba(0,0,0,0) 70%);
+  z-index: 1;
+  pointer-events: none;
+  animation: blobFloat 12s infinite alternate ease-in-out;
+}
+
+.decorativeCircle2 {
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  width: 400px;
+  height: 400px;
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  background: radial-gradient(circle, rgba(100, 40, 230, 0.3) 0%, rgba(0,0,0,0) 70%);
+  z-index: 1;
+  pointer-events: none;
+  animation: blobFloatAlt 15s infinite alternate ease-in-out;
+}
+
+.rightPanel {
+  flex: 1.2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: #fff;
+}
+
+@media (min-width: 900px) {
+  .rightPanel {
+    padding: 60px 40px;
+  }
+}
+
+.formContainer {
+  width: 100%;
+  max-width: 580px;
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 20px;
+  border: 1px solid #e0e0e0; /* Replaced shadow with grey border */
+}
+
+@media (min-width: 600px) {
+  .formContainer {
+    padding: 50px 40px;
+  }
+}
+
+.formTitle {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  font-family: var(--font-chivo), sans-serif;
+  color: #111;
+  letter-spacing: -0.02em;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.fieldGroup {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 500px) {
+  .fieldGroup {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Pill Shaped Inputs */
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 16px 24px;
+  border: 1px solid #d8d8d8;
+  background: #fff;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #333;
+  border-radius: 40px;
+  transition: all 0.3s ease;
+}
+
+.field textarea {
+  border-radius: 20px;
+  resize: vertical;
+  min-height: 140px;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: #888;
+  font-weight: 400;
+}
+
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: #000;
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
+}
+
+.field input:hover,
+.field textarea:hover {
+  border-color: #aaa;
+}
+
+.submitButton {
+  margin-top: 10px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 18px 32px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.submitButton:hover {
+  background-color: var(--brand-red);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(230, 0, 0, 0.15);
+}
