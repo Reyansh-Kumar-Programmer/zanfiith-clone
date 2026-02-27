@@ -1,0 +1,45 @@
+.hero {
+  background-color: var(--brand-red);
+  padding: 80px 0;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.heroTitle {
+  font-size: clamp(48px, 10vw, 120px);
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #000000;
+  line-height: 0.8;
+  letter-spacing: -0.04em;
+  font-family: var(--font-chivo), sans-serif;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.filterGroup {
+  display: flex;
+  gap: 24px;
+}
+
+.filterItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.productCount {
+  font-size: 13px;
+  color: var(--muted);
+}
